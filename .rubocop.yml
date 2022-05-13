@@ -40,6 +40,17 @@ Style/DefWithParentheses:
   Enabled: false
 Style/FrozenStringLiteralComment:
   EnforcedStyle: never
+Style/StringLiterals:
+  Enabled: false
+Style/GuardClause: 
+  Enabled: false
+Style/RedundantArgument:
+  Enabled: false
+Lint/UselessAssignment:
+  Enabled: false
+Lint/RedundantDirGlobSort:
+  Enabled: false
+
 
 Layout/HashAlignment:
   EnforcedColonStyle: key
