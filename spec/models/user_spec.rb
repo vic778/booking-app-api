@@ -34,5 +34,4 @@ RSpec.describe User, type: :model do
     user.email = @user.email
     expect(user).to_not be_valid
   end
-
 end
