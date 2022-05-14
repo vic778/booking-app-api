@@ -48,5 +48,14 @@ RSpec.describe "Api::V1::Authentications", type: :request do
       post '/api/v1/auth/login', params: user_params
       expect(response.body).to include('user')
     end
+
+    it 'returns correct user' do
+      user_params = {
+        email: 'rickymormor1@gmail.com',
+        password: '123456'
+      }
+      post '/api/v1/auth/login', params: user_params
+      expect(response.body).to include('"name":"Ricky"')
+    end
   end
 end
