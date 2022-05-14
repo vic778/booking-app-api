@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'rails_helper'
 
 RSpec.describe "Api::V1::Authentications", type: :request do
   describe "GET /api/v1/authentications" do
