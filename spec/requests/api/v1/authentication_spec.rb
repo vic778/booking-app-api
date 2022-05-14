@@ -21,5 +21,14 @@ RSpec.describe "Api::V1::Authentications", type: :request do
       post '/api/v1/auth/login', params: user_params
       expect(response).to have_http_status(:accepted)
     end
+
+    it "returns http unprocessable entity" do
+      user_params = {
+        email: '',
+        password: '123456'
+      }
+      post '/api/v1/auth/login', params: user_params
+      expect(response).to have_http_status(:unauthorized)
+    end
   end
 end
