@@ -44,5 +44,4 @@ RSpec.describe "Api::V1::Users", type: :request do
     put "/api/v1/users/#{user.id}", params: user_params
     expect(response).to have_http_status(:unprocessable_entity)
   end
-
 end
