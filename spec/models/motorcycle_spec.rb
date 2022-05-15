@@ -45,6 +45,4 @@ RSpec.describe Motorcycle, type: :model do
     motorcycle2 = FactoryBot.build(:motorcycle, user: @user, title: motorcycle.title)
     expect(motorcycle2).to be_valid
   end
-
-
 end
