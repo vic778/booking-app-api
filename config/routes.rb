@@ -7,5 +7,14 @@ Rails.application.routes.draw do
       put 'users/:id', to: 'users#update'
       delete 'users/:id', to: 'users#destroy'
     end
+
+    namespace :v2 do
+      get 'motorcyles', to: 'motorcyles#index'
+      get 'motorcyles/:id', to: 'motorcyles#show'
+      post 'motorcyles/new', to: 'motorcyles#create'
+      put 'motorcyles/:id', to: 'motorcyles#update'
+      delete 'motorcyles/:id', to: 'motorcyles#destroy'
+    end
+
   end
 end
