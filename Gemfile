@@ -44,6 +44,8 @@ group :development, :test do
   gem 'faker'
   gem 'rspec-rails'
   gem 'rubocop'
+  gem 'rubocop-rspec'
+  gem 'carrierwave'
 end
 
 group :development do
