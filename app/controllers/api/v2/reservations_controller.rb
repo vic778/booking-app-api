@@ -18,7 +18,7 @@ class Api::V2::ReservationsController < ApplicationController
   end
 
   def create
-    @reservation = @user.reservations.new(reservation_params)
+    @reservation = Reservation.new(reservation_params.merge(user: @user))
     # update motorcycle availability
     @motorcycle = Motorcycle.find(params[:motorcycle_id])
     if @reservation.save

@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   has_many :motorcycles
+  has_many :reservations
+  
 
   has_secure_password
   validates :name, presence: true

@@ -28,6 +28,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_17_091719) do
     t.string "image"
     t.integer "year"
     t.string "model"
+    t.boolean "available", default: true
     t.string "color"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
