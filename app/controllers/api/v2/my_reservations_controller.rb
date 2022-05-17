@@ -5,9 +5,4 @@ class Api::V2::MyReservationsController < ApplicationController
     @reservations = @user.reservations.all
     render json: @reservations
   end
-
-  
-
-  
- 
 end

@@ -1,5 +1,5 @@
 class Api::V2::ReservationsController < ApplicationController
-  before_action :authorize, only: [:create, :update, :destroy]
+  before_action :authorize, only: %i[create update destroy]
   before_action :set_reservation, only: %i[update destroy]
 
   def index
@@ -61,5 +61,4 @@ class Api::V2::ReservationsController < ApplicationController
   def reservation_params
     params.permit(:motorcycle_id, :duration, :price)
   end
-
 end
