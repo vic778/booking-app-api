@@ -7,9 +7,9 @@ class Api::V2::MyReservationsController < ApplicationController
     render json: @reservations
   end
 
-  def show
-    render json: @reservation
-  end
+  # def show
+  #   render json: @reservation
+  # end
 
   private
   
