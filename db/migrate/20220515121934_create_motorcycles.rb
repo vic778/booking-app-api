@@ -6,6 +6,7 @@ class CreateMotorcycles < ActiveRecord::Migration[7.0]
       t.string :image
       t.integer :year
       t.string :model
+      t.available :boolean, default: true
       t.string :color
       t.references :user, null: false, foreign_key: true
 
