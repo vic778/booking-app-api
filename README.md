@@ -1,16 +1,16 @@
 # BOOKING-APP-API
 
-> lorem lorem lorem
 
-[Live Demo](https://vic-ecommerce.herokuapp.com)
-
-![Demo](https://github.com/vic778/e-coomerce/blob/master/screen/demo.gif)
-
-This API is made of three models:
+> This is the backend for the [booking-app](https://github.com/afizsavage/booking-app) web application for motorcycle reservations: you have a list of motorcycles that a user can reserve for a certain period of time. The backend is a REST API that allows you to create, read, update and delete motorcycles. It also allows you to create, read, update and delete reservations.
+This API is made these models:
 - User model
 - Motorcycle model
 - Reservation model
 - My_Reservation Model
+
+### Deployment
+[Live Demo](https://vic-ecommerce.herokuapp.com)
+
 
 The API has the following endpoints:
 
@@ -80,6 +80,10 @@ allows user to cancel a reservation
 
 - Rails
 - Ruby 
+- Postgresql
+- JWT
+- ActiveRecord Serializer
+- ActiveRecord Image Uploader
 - Heroku
 
 ## Getting Started
@@ -94,7 +98,7 @@ Here are the steps to follow in order to get this project on your local computer
 
 ### Setup
 
-clone this repo by typing `git clone https://github.com/vic778/e-coomerce`
+clone this repo by typing `git clone https://github.com/vic778/booking-app-api.git`
 
 ### Install
 
@@ -108,9 +112,9 @@ start the local server by running `rails s`
 
 run the tests by typing `bundle exec rspec`
 
-### Deployment
 
-N/A
+### Documentation
+
 
 ## Author
 
@@ -119,6 +123,12 @@ N/A
 - GitHub: [@Vvic778](https://github.com/vic778)
 - Twitter: [@victoirBarh](https://twitter.com/)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/victoir-barh)
+
+👤 **Ricky Mormor**
+
+- GitHub: [@cwaku](https://github.com/cwaku)
+- Twitter: [@rickymormor](https://twitter.com/rickymormor)
+- LinkedIn: [Ricky Mormor](https://github.com/cwaku/blog/blob/develop/www.linkedin.com/in/rickymormor)
 
 
 ## 🤝 Contributing
