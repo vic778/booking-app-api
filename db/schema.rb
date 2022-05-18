@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_15_121934) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_17_091719) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -28,11 +28,23 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_15_121934) do
     t.string "image"
     t.integer "year"
     t.string "model"
+    t.boolean "available", default: true
     t.string "color"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_motorcycles_on_user_id"
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "motorcycle_id", null: false
+    t.integer "duration"
+    t.integer "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["motorcycle_id"], name: "index_reservations_on_motorcycle_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -45,4 +57,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_15_121934) do
 
   add_foreign_key "admins", "users"
   add_foreign_key "motorcycles", "users"
+  add_foreign_key "reservations", "motorcycles"
+  add_foreign_key "reservations", "users"
 end
