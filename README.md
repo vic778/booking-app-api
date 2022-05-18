@@ -9,7 +9,7 @@ This API is made these models:
 - My_Reservation Model
 
 ### Deployment
-<!-- [Base URL](https://secure-bastion-02263.herokuapp.com/) -->
+[Base URL](https://secure-bastion-02263.herokuapp.com/)
 
 
 The API has the following endpoints:
