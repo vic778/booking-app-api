@@ -59,6 +59,6 @@ class Api::V2::ReservationsController < ApplicationController
   end
 
   def reservation_params
-    params.permit(:motorcycle_id, :duration, :price)
+    params.permit(:motorcycle_id, :duration, :price, :date, :city)
   end
 end
