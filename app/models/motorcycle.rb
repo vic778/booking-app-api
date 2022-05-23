@@ -9,4 +9,5 @@ class Motorcycle < ApplicationRecord
   validates :year, presence: true
   validates :model, presence: true
   validates :color, presence: true
+  validates :image, presence: true
 end
