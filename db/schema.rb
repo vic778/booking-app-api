@@ -41,6 +41,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_17_091719) do
     t.bigint "motorcycle_id", null: false
     t.integer "duration"
     t.integer "price"
+    t.datetime "date"
+    t.string "city"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["motorcycle_id"], name: "index_reservations_on_motorcycle_id"
