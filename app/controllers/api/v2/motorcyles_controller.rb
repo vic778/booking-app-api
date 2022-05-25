@@ -1,6 +1,6 @@
 class Api::V2::MotorcylesController < ApplicationController
-  before_action :authorize, only: %i[create update destroy show]
-  before_action :set_motorcycle, only: %i[show update destroy]
+  before_action :authorize, only: %i[create update destroy]
+  before_action :set_motorcycle, only: %i[ update destroy]
 
   def index
     @motorcycles = Motorcycle.all
@@ -8,7 +8,7 @@ class Api::V2::MotorcylesController < ApplicationController
   end
 
   def show
-    # @motorcycle = Motorcycle.find(params[:id])
+    @motorcycle = Motorcycle.find(params[:id])
     render json: @motorcycle
   end
 
