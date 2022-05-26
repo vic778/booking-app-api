@@ -16,7 +16,6 @@ Rails.application.routes.draw do
       delete 'motorcyles/:id', to: 'motorcyles#destroy'
 
       get 'my_reservations', to: 'my_reservations#index'
-      # get 'my_reservations/:id', to: 'my_reservations#show'
       get 'available_motorcycles', to: 'reservations#index'
       get 'reserve_motorcycle/:id', to: 'reservations#show'
       post 'reservations/new', to: 'reservations#create'
