@@ -3,10 +3,6 @@ class Api::V2::ReservationsController < ApplicationController
   before_action :set_reservation, only: %i[update destroy]
 
   def index
-    # @reservations = @user.reservations.all
-    # render json: @reservations
-
-    # Show all available motorcycles for reservation
     @motorcycles = Motorcycle.where(available: true)
     render json: @motorcycles
   end
@@ -19,7 +15,6 @@ class Api::V2::ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.new(reservation_params.merge(user: @user))
-    # update motorcycle availability
     @motorcycle = Motorcycle.find(params[:motorcycle_id])
     if @reservation.save
       render json: { success: true, message: "Reservation created successfully", reservation: @reservation },
