@@ -1,6 +1,6 @@
 class Api::V2::ReservationsController < ApplicationController
   before_action :authorize, only: %i[create update destroy]
-  before_action :set_reservation, only: %i[ update destroy]
+  before_action :set_reservation, only: %i[update destroy]
 
   def index
     # @reservations = @user.reservations.all
@@ -22,7 +22,6 @@ class Api::V2::ReservationsController < ApplicationController
     # update motorcycle availability
     @motorcycle = Motorcycle.find(params[:motorcycle_id])
     if @reservation.save
-      @motorcycle.update(available: false)
       render json: { success: true, message: "Reservation created successfully", reservation: @reservation },
              status: :created
     else
