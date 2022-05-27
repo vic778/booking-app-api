@@ -9,15 +9,15 @@ Rails.application.routes.draw do
     end
 
     namespace :v2 do
-      get 'motorcyles', to: 'motorcyles#index'
-      get 'motorcyles/:id', to: 'motorcyles#show'
-      post 'motorcyles/new', to: 'motorcyles#create'
-      put 'motorcyles/:id', to: 'motorcyles#update'
-      delete 'motorcyles/:id', to: 'motorcyles#destroy'
+      get 'scooters', to: 'motorcyles#index'
+      get 'scooters/:id', to: 'motorcyles#show'
+      post 'scooters/new', to: 'motorcyles#create'
+      put 'scooters/:id', to: 'motorcyles#update'
+      delete 'scooters/:id', to: 'motorcyles#destroy'
 
       get 'my_reservations', to: 'my_reservations#index'
-      get 'available_motorcycles', to: 'reservations#index'
-      get 'reserve_motorcycle/:id', to: 'reservations#show'
+      get 'available_scooters', to: 'reservations#index'
+      get 'reserve_scooter/:id', to: 'reservations#show'
       post 'reservations/new', to: 'reservations#create'
       put 'reservations/:id', to: 'reservations#update'
       delete 'reservations/:id', to: 'reservations#destroy'
