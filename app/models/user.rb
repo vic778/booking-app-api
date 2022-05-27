@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  has_many :motorcycles
-  has_many :reservations
+  has_many :motorcycles, dependent: :destroy
+  has_many :reservations, dependent: :destroy
 
   has_secure_password
   validates :name, presence: true
