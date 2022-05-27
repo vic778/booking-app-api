@@ -1,6 +1,6 @@
 class Api::V2::ReservationsController < ApplicationController
   before_action :authorize, only: %i[create update destroy]
-  before_action :set_reservation, only: %i[update destroy]
+  before_action :set_reservation, only: %i[create update destroy]
 
   def index
     @motorcycles = Motorcycle.where(available: true)
