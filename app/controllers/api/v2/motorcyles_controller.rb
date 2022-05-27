@@ -1,6 +1,6 @@
 class Api::V2::MotorcylesController < ApplicationController
   before_action :authorize, only: %i[create update destroy]
-  before_action :set_motorcycle, only: %i[update destroy]
+  before_action :set_motorcycle, only: %i[create update destroy]
 
   def index
     @motorcycles = Motorcycle.all
