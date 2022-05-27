@@ -10,7 +10,7 @@ class Reservation < ApplicationRecord
   validates :city, presence: true
 
   def set_available
-    @motorcycle = Motorcycle.find(self.motorcycle_id)
+    @motorcycle = Motorcycle.find(motorcycle_id)
     @motorcycle.update(available: false)
   end
 end
