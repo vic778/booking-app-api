@@ -1,7 +1,8 @@
 class Reservation < ApplicationRecord
+  before_save :date_not_in_past, if: :date
+
   belongs_to :user
   belongs_to :motorcycle
-  after_save :set_available
 
   validates :motorcycle_id, presence: true, uniqueness: true
   validates :duration, presence: true
@@ -9,8 +10,8 @@ class Reservation < ApplicationRecord
   validates :date, presence: true
   validates :city, presence: true
 
-  def set_available
-    @motorcycle = Motorcycle.find(motorcycle_id)
-    @motorcycle.update(available: false)
+  # check if the date is not in the past
+  def date_not_in_past
+    errors.add(:date, "can't be in the past") if date.present? && date < Date.today
   end
 end

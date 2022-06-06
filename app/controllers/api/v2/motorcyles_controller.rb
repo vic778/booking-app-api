@@ -1,6 +1,6 @@
 class Api::V2::MotorcylesController < ApplicationController
   before_action :authorize, only: %i[create update destroy]
-  before_action :set_motorcycle, only: %i[update destroy]
+  before_action :set_motorcycle, only: %i[update]
 
   def index
     @motorcycles = Motorcycle.all
@@ -24,7 +24,6 @@ class Api::V2::MotorcylesController < ApplicationController
   end
 
   def update
-    # @motorcycle = Motorcycle.find(params[:id])
     if @motorcycle.update(motorcycle_params)
       render json: { success: true, message: "Motorcycle updated successfully", motorcycle: @motorcycle },
              status: :ok
@@ -35,11 +34,15 @@ class Api::V2::MotorcylesController < ApplicationController
   end
 
   def destroy
-    # @motorcycle = Motorcycle.find(params[:id])
-    if @motorcycle.destroy
-      render json: { success: true, message: "Motorcycle deleted successfully" }, status: :ok
+    if motorcycle = @user.motorcycles.find_by(id: params[:id])
+      if motorcycle.available == true
+        @reservation.destroy
+        render json: { success: true, message: "Reservation deleted successfully" }, status: :ok
+      else
+        render json: { success: false, message: "Motorcycle is reserved" }, status: :bad_request
+      end
     else
-      render json: { success: false, message: "Motorcycle not deleted" }, status: :bad_request
+      render json: { success: false, message: "Motorcycle not found" }, status: 404
     end
   end
 
