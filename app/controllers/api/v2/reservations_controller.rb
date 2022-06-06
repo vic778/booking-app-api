@@ -25,7 +25,7 @@ class Api::V2::ReservationsController < ApplicationController
       end
 
     else
-      render json: { error: "Motorcycle not found" }, status: 404
+      render json: { error: "Scooter not found" }, status: 404
     end
   end
 
