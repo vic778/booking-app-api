@@ -63,6 +63,8 @@ Lint/RaiseException:
   Enabled: false
 Lint/StructNewOverride:
   Enabled: false
+Lint/AssignmentInCondition:
+  Enabled: false
 Lint/MissingCopEnableDirective:
   Enabled: false
 Style/HashEachMethods:
