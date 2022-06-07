@@ -8,20 +8,24 @@ class Api::V2::ReservationsController < ApplicationController
   end
 
   def show
-    # show particular motorcycle for reservation
     @motorcycle = Motorcycle.find(params[:motorcycle_id])
     render json: @motorcycle
   end
 
   def create
     @reservation = Reservation.new(reservation_params.merge(user: @user))
-    @motorcycle = Motorcycle.find(params[:motorcycle_id])
-    if @reservation.save
-      render json: { success: true, message: "Reservation created successfully", reservation: @reservation },
-             status: :created
+    if @motorcycle = Motorcycle.find_by(id: params[:motorcycle_id])
+      if @reservation.save
+        render json: { success: true, message: "Reservation created successfully", reservation: @reservation },
+               status: :created
+      else
+
+        render json: { success: false, message: "Reservation not created", errors: @reservation.errors },
+               status: :bad_request
+      end
+
     else
-      render json: { success: false, message: "Reservation not created", errors: @reservation.errors },
-             status: :bad_request
+      render json: { error: "Scooter not found" }, status: 404
     end
   end
 
@@ -36,7 +40,6 @@ class Api::V2::ReservationsController < ApplicationController
   end
 
   def destroy
-    # update motorcycle availability
     @motorcycle = Motorcycle.find(params[:motorcycle_id])
     if @reservation.destroy
       @motorcycle.update(available: true)
